@@ -1,0 +1,485 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{times}
+\end_preamble
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Mbh}{M_{\bullet}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ms}{m_{\star}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ns}{N_{\star}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ms}{M_{\star}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Rs}{R_{\star}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ns}{n_{\star}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tvRR}{t_{\mathrm{vRR}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\xRR}{x_{RR}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Rlso}{R_{\mathrm{lso}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Plso}{P_{\mathrm{lso}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Nlso}{N_{\mathrm{lso}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Mo}{M_{\odot}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+The general Fokker-Planck mass segregation equation 
+\end_layout
+
+\begin_layout Author
+
+\shape smallcaps
+research note
+\shape default
+
+\newline
+Tal Alexander
+\end_layout
+
+\begin_layout Section
+Dimensional equations
+\end_layout
+
+\begin_layout Standard
+The dimensional continuity equation formulation of the Fokker-Planck equation
+ (BW77 Eqs.
+ 26a, 26b, 40) expresses the interactions of stars of mass 
+\begin_inset Formula $M$
+\end_inset
+
+ with all stellar types 
+\begin_inset Formula $\left\{ m\right\} $
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\frac{\partial f_{M}(E,t)}{\partial t}=-A_{_{M}}\left(\frac{E}{M}\right)^{5/2}\frac{\partial}{\partial E}\sum_{m}R_{M,m}(E,t)\,,\label{e:dfM}\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula \[
+A_{M}=\frac{M}{\sqrt{2}\pi^{3}G^{3}\Mbh^{3}}\,,\]
+
+\end_inset
+
+and
+\begin_inset Formula \begin{eqnarray}
+R_{M,m}(E,t) & = & B_{M}m\times\label{e:RMm}\\
+ &  & \int_{-\infty}^{E_{D}(m)}\!\mathrm{d}E_{m}\frac{f_{M}(E,t)f_{m}^{\prime}(E_{m},t)\!-\! f_{m}(E_{m},t)f_{M}^{\prime}(E,t)}{\max(E/M,E_{m}/m)^{3/2}}\,,\end{eqnarray}
+
+\end_inset
+
+where here and elsewhere, the prime denotes the partial derivative according
+ to the energy, and where 
+\begin_inset Formula \begin{equation}
+B_{M}=\frac{32}{3}\log\Lambda\sqrt{2}\pi^{5}G^{5}\Mbh^{3}M\,.\end{equation}
+
+\end_inset
+
+Note that the destruction energy 
+\begin_inset Formula $E_{D}$
+\end_inset
+
+ may depend on the stellar mass 
+\begin_inset Formula $m$
+\end_inset
+
+ (e.g.
+ if it is the tidal destruction radius).
+ 
+\end_layout
+
+\begin_layout Standard
+The boundary conditions assume an isothermal distribution for the unbound
+ stars (specific energy 
+\begin_inset Formula $\epsilon=E/M<0$
+\end_inset
+
+), 
+\begin_inset Formula \begin{equation}
+f_{M}(\epsilon)=S_{M}\ns\frac{\exp(\epsilon/\sigma_{M}^{2})}{(2\pi\sigma_{M}^{2})^{3/2}}\,.\label{e:MB}\end{equation}
+
+\end_inset
+
+The density normalization is relative to 
+\begin_inset Formula $\ns$
+\end_inset
+
+, the asymptotic space density far from the MBH of the reference star of
+ mass 
+\begin_inset Formula $M_{\star}$
+\end_inset
+
+ and velocity dispersion 
+\begin_inset Formula $\sigma_{\star}$
+\end_inset
+
+.
+ The constants 
+\begin_inset Formula $S_{M}$
+\end_inset
+
+ are the asymptotic stellar population number ratios relative to the reference
+ star.
+ By definition, 
+\begin_inset Formula $S_{\star}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Derivation of the HA06b notation in the general case
+\end_layout
+
+\begin_layout Standard
+It is convenient to use the reference star and its properties to define
+ 
+\begin_inset Formula $M$
+\end_inset
+
+-independent units of specific energy, 
+\begin_inset Formula $\epsilon_{\star}$
+\end_inset
+
+, time 
+\begin_inset Formula $t_{\star}$
+\end_inset
+
+ and phase space density 
+\begin_inset Formula $f_{\star}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+\epsilon_{\star} & \equiv & \sigma_{\star}^{2}\,,\\
+t_{\star} & \equiv & \frac{3}{32\pi^{2}}\frac{\left(2\pi\sigma_{\star}^{2}\right)^{3/2}}{G^{2}\Ms^{2}\ns\log\Lambda}\,,\\
+f_{\star} & \equiv & \frac{\ns}{\left(2\pi\sigma_{\star}^{2}\right)^{3/2}}\end{eqnarray}
+
+\end_inset
+
+and use these to define the dimensionless energy, time and DF: 
+\begin_inset Formula $x\equiv\epsilon/\epsilon_{\star}$
+\end_inset
+
+, 
+\begin_inset Formula $\tau\equiv t/t_{\star}$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{M}\equiv f_{M}/f_{\star}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The numeric pre-factors appearing in the dimensional FP equations (Eqs 
+\begin_inset LatexCommand ref
+reference "e:dfM"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand ref
+reference "e:RMm"
+
+\end_inset
+
+) can then be expressed as 
+\begin_inset Formula \begin{equation}
+A_{M}B_{M}=(32/3)\log\Lambda\pi^{2}G^{2}M^{2}\equiv\left(\frac{M}{\Ms}\right)^{2}\frac{1}{f_{\star}}\frac{1}{t_{\star}}\,.\end{equation}
+
+\end_inset
+
+ The FP equations are then
+\begin_inset Formula \begin{equation}
+\frac{\partial h_{M}(\epsilon,\tau)}{\partial\tau}=-\epsilon^{5/2}\frac{M}{\Ms}\frac{\partial}{\partial\epsilon}\sum_{m}Q_{M,m}(\epsilon,\tau)\,,\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+Q_{M,m}(\epsilon,\tau)=\frac{m}{\Ms}\int_{-\infty}^{\epsilon_{D}(m)}\mathrm{d}\epsilon_{m}\frac{h_{M}(\epsilon,\tau)h_{m}^{\prime}(\epsilon_{m},\tau)\!-\!\left(\frac{m}{M}\right)h_{m}(\epsilon_{m},\tau)h_{M}^{\prime}(\epsilon,\tau)}{\max(\epsilon,\epsilon_{m})^{3/2}}\,.\end{equation}
+
+\end_inset
+
+Finally, defining the mass unit to be 
+\begin_inset Formula $M_{\star}$
+\end_inset
+
+, and using the dimensionless energy, the general dimensionless FP equations
+ are
+\begin_inset Formula \begin{equation}
+\frac{\partial h_{M}(x,\tau)}{\partial\tau}=-x^{5/2}\frac{\partial Q_{M}(x,\tau)}{\partial x}\,,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+Q_{M}(x,\tau)=M\sum_{m}Q_{M,m}(x,)\,,\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+Q_{M,m}(x,\tau)=m\int_{-\infty}^{y_{D}(m)}\mathrm{d}y\frac{h_{M}(x,\tau)h_{m}^{\prime}(y,\tau)\!-\!\left(\frac{m}{M}\right)h_{m}(y,\tau)h_{M}^{\prime}(x,\tau)}{\max(x,y)^{3/2}}\,.\end{equation}
+
+\end_inset
+
+Note that in the numeric calculations carried out in HA06b it was assumed
+ that the destruction energy 
+\begin_inset Formula $\epsilon_{D}$
+\end_inset
+
+ (and therefore also 
+\begin_inset Formula $y_{D}$
+\end_inset
+
+) is independent of 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The boundary condition for an unbound isothermal (MB) distribution of stars
+ is given in terms of the dimensionless quantities 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+h_{M,u}(x)=C_{M}\exp(\sigma_{*}^{2}x/\sigma_{M}^{2})\qquad(x<0)\,,\end{equation}
+
+\end_inset
+
+ where the constant 
+\begin_inset Formula $C_{M}$
+\end_inset
+
+ is related to the asymptotic population ratio 
+\begin_inset Formula $S_{M}$
+\end_inset
+
+ by (see Eq.
+ 
+\begin_inset LatexCommand ref
+reference "e:MB"
+
+\end_inset
+
+) 
+\begin_inset Formula \begin{equation}
+C_{M}=\left(\sigma_{\star}/\sigma_{M}\right)^{3}S_{M}\,.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Derivation of the BW77 notation in the general case 
+\end_layout
+
+\begin_layout Standard
+The time unit in BW77 is the same as in HA06b, but they define the dimensionless
+ energy and DF using 
+\begin_inset Formula $M$
+\end_inset
+
+-dependent quantities, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+u\equiv\frac{\Ms}{M}\frac{E}{\beta_{M}}\,.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+g_{M}(u)\equiv\frac{\left(2\pi\beta_{M}/\Ms\right)^{3/2}}{\ns}f_{M}(E)\,,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\beta_{M}\equiv M\sigma_{M}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The general dimensionless FP equations are then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\frac{\partial g_{M}(u,\tau)}{\partial\tau}=-x^{5/2}\frac{\partial Q_{M}(u,\tau)}{\partial u}\,,\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+Q_{M}(u) & = & M\sum_{m}\left(\frac{\beta_{\star}}{\beta_{m}}\right)^{3/2}m\int_{-\infty}^{w_{D}(m)}\frac{\mathrm{d}w}{\max[u,(\beta_{m}/\beta_{M})w]^{3/2}}\nonumber \\
+ &  & \times\left[g_{M}(u)g_{m}^{\prime}(w)-\frac{\beta_{m}}{\beta_{M}}\frac{m}{M}g_{M}^{\prime}(u)g_{m}(w)\right]\,,\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The boundary condition for an unbound isothermal (MB) distribution of stars
+ is given in terms of the dimensionless quantities 
+\begin_inset Formula \begin{equation}
+g_{M,u}(x)=C_{M}\exp(Mx/\Ms)\qquad(x<0)\,.\end{equation}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ where the constant 
+\begin_inset Formula $C_{M}$
+\end_inset
+
+ is related to the asymptotic population ratio 
+\begin_inset Formula $S_{M}$
+\end_inset
+
+ by 
+\begin_inset Formula $C_{M}=\left(M/\Ms\right)^{3/2}S_{M}$
+\end_inset
+
+ (Eq.
+ 
+\begin_inset LatexCommand ref
+reference "e:MB"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Note that in the specific case of equipartition (
+\begin_inset Formula $\beta_{M}=\beta_{\star}$
+\end_inset
+
+), the BW77 notation becomes equivalent in functional form to the HA06b
+ notation.
+\end_layout
+
+\end_body
+\end_document

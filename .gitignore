@@ -1,0 +1,11 @@
+Prog/FP.status
+*.mod
+Runs
+*.log
+*.out
+*~
+FPSolverMS
+density
+loss_cone_tests
+*.test
+*.pyc

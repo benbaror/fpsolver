@@ -1,0 +1,30 @@
+&FPinp			! Input parameters for FPSolverMS.f
+!run_title = 'Testing the loss-cone term',
+!			! Principal parameters for PDECOL	
+NINT = 32,              ! PDECOL: No. of colocation points
+NPDE = 2,               ! PDECOL: No. of PDEs to solve (= no. of mass groups)
+KORD = 4,               ! PDECOL: Order of interpolating polynomial
+NCC = 2,                ! PDECOL: No. of continuity conditions
+                        !
+DEBUG = .false., 	! Debug message flag	
+!DEBUG = .true., 	! Debug message flag	
+DBGLVL = 9,		! Debug level
+crate0 = 1e-5,		! Convergence rate threshold for stoping	 
+nT1 = 30,		! Number of time snapshots
+dT1 = 0.2,		! Time between snapshots
+! Boundary condition: (x<0) g_M(x)=C_m*exp(D_m*x); D_m=(sig_*/sig_m)^2
+m(1) = 1.0, Cm(1) = 1.0, Dm(1) = 1.0,	! mass, number ratio, v.d. ratio
+m(2) = 10.0, Cm(2) = 1e-6, Dm(2) = 1.0,	! mass, number ratio, v.d. ratio
+xD = 1e4,		! Maximal X value (destruction X)
+x1 = 5e-2,		! Minimal non-zero X value
+rh2rg = 1.04e7,         ! Ratio of r_h to r_g (= (c/sigma_*)^2)
+			! Read initial solution from file (if 1st char != " ")
+initf = 'Q_last.out',
+x_idx = 2, g_idx(1) = 3, g_idx(2) = 7,
+			! Read X grid from file (if 1st char != " ")
+xgridf = ' Xgrid_BW77_f2a_no_close_x.dat',		  
+! PDECOL input parameters
+DT =  1e-7,		! Initial Delta t for integrator
+EPS = 1e-4,		! Relative time error bound (recommended)	
+MF = 22,		! Integration method flag (recommended)
+/

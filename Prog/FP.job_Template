@@ -1,0 +1,46 @@
+#!/bin/sh -
+. /usr/local/sge/default/common/settings.sh
+
+#Your job name
+#$ -N @job_name
+#
+#Queue name
+#$ -q all.q
+# Use current working directory
+#$ -cwd
+#
+# Join stdout and stderr
+# -j y
+# Redirect output stream to this file.
+#$ -o @output_path
+#$ -S /bin/sh
+
+
+# Redirect error stream to this file.
+#$ -e /home/ben/errors/FP/
+
+#
+# The following is for reporting only. It is not really needed
+# to run the job. It will show up in your output file.
+#
+# Use full pathname to make sure we are using the right mpirun\\
+
+
+# needs in
+#   $NSLOTS         
+#       the number of tasks to be used
+#   $TMPDIR/machines
+#       a valid machiche file to be passed to mpirun
+unset SGE_ROOT
+
+echo Starting on: `date`
+hostname
+t1=`date -d now +"%s"`
+@binary < @input_file
+/bin/echo Ending on: `date`
+t2=`date -d now +"%s"`
+dth=`echo "scale=0; ($t2-$t1)/3600" |bc`
+dtm=`echo "scale=0; (($t2-$t1)%3600)/60" |bc`
+dts=`echo "((($t2-$t1)%3600)%60)" |bc`
+/bin/echo Run time: ${dth}h${dtm}m${dts}s
+#~/bin/twitter "@benbaror Job $JOB_ID '('$JOB_NAME')' Complete in $dt hours"

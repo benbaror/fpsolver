@@ -1,0 +1,11 @@
+BW_PDE_nonequipartition.pdf : Derivation of the BW7 equations in non-dimensional
+			      form and introduction of the AH09 notation and
+			      its interpretation.
+BW_PDE_v3.pdf		    : Technical description of how the FP equations
+			      are solved in FPSolver
+density.pdf                 : Derivation and discussion of the spatial density
+			      from the DF
+MultiMass.pdf               : Discussion of differences between the assumption
+			      and notations of BW77 and HA06b
+AlexanderHopman09	    : The published paper on strong mass segregation.
+			      

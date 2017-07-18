@@ -1,0 +1,31 @@
+&DNSINP		! Input parameters for density.f
+mbh = 4e6,	! MBH mass [Mo]
+ms = 1.0,	! Typical star mass [Mo]
+rh = 2.0, 	! Radius of influence of typical star [pc]
+! normalization modes:
+! nmode = 1: By given total stellar number density at rh
+! nmode = 2: By given total enclosed stellar number at rh
+! nmode = 3: By given total stellar mass density at rh
+! nmode = 4: By given total enclosed stellar mass at rh
+! nmode = 5: By given stellar number density of typical star at rh
+! nmode = 6: By given total enclosed stellar number of typical star at rh
+nmode = 4,	! Normalization mode 
+nh = 4e4, 	! Total/Typical star number density at rh [pc^-3] (nmode=1,5)
+rhoh = -1.0,	! Total stellar mass density at rh [M0/pc^3]      (nmode=3)
+Nench = -1.0,	! Total/Typical star enclosed number in rh        (nmode=2,6)
+Mench = 4e6,	! Total stellar mass enclosed in rh [Mo]          (nmode=4)
+!
+nr = 100, 	! Resolution of log(r) grid	
+nm = 1,		! Number of mass groups
+		! Boundary conditions (x<0): 
+		! g_m(x)=C_m*exp(D_m*x)
+		! D_m=(sig_*/sig_m)^2; C_m=D_m^(3/2)*S_m
+		! The typical star should have S_m=1
+m(1) = 1.0, Sm(1) = 1.0,   Dm(1) = 1.0,    ! mass, number ratio, v.d. ratio
+!
+			! DF file	
+file = 'FP_last.out', 	
+xcol = 2, 		! Column no. for x data
+gmcol = 3, 6, 9, 12,	! Colunm no(s). for g_m	
+gxmcol = 4, 7, 10, 13, 	! Colunm no(s). for dg_m/dx
+/
