@@ -322,6 +322,11 @@ contains
         &+LOG(xD/4./Xg(iX))/q_ha))
 #endif pinhole
 
+   ! Binary capture
+   if (Xg(iX) < xmax .and. Xg(iX) > xmin) then
+      LCterm =   - eta_L*Xg(iX)**(3./2.)/log(xmax/xmin)*sqrt(2.)/3/pi
+   end if
+   
 #ifdef do_RR
     tM = 0.0
     Nm2 = 0.0

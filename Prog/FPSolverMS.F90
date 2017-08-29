@@ -45,7 +45,7 @@ program FPSolverMS
   namelist /FPinp/ NINT, NPDE, KORD, NCC, &
      DEBUG,DBGLVL,crate0,nT1,dT1,xD,rh2rg, &
      x1,xgridf,initf,x_idx,g_idx,DT,EPS,MF,m,Cm,Dm,Sm, &
-     run_title, ANR, ARR, Aeps, AGR, path
+     run_title, ANR, ARR, Aeps, AGR, path, xmin, xmax, eta_L
 !
   write (*,'("Program FPSolver (",a10,") begins.")') version
 !

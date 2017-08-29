@@ -30,7 +30,7 @@ module FPvars
                                 ! appear in namelist
   real, dimension(mM), save :: m, Cm, Dm, Sm
   REAL ::  xU,xD,x1
-  REAL :: ARR, ANR, Aeps, AGR
+  REAL :: ARR, ANR, Aeps, AGR, xmin, xmax, eta_L
   real :: rh2rg                ! ratio of rh=GM/sig(*)^2 to rg=GM/c^2
                                ! used for calculating LC term
   integer :: iMtyp             ! Index of typical star
